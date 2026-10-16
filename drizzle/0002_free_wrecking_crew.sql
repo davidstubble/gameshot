@@ -1,0 +1,1 @@
+ALTER TABLE `billingLoginChallenges` ADD `verifierHash` varchar(64);
