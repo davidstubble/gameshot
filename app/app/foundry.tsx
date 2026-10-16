@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-import * as Clipboard from 'expo-clipboard';
 import { ActionButton, Icon, Notice, palette } from '@/components/crop/ui';
 import { StudioScreen, studioStyles } from '@/components/studio/ui';
 
@@ -224,8 +223,6 @@ ${selected.defaultGates.map((g, i) => `- [${gatesChecked[g] ? 'x' : ' '}] Gate $
     try {
       if (Platform.OS === 'web' && typeof navigator !== 'undefined' && navigator.clipboard) {
         await navigator.clipboard.writeText(md);
-      } else {
-        await Clipboard.setStringAsync(md);
       }
       setNotice('Complete Markdown blueprint copied to clipboard!');
     } catch {
