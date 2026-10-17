@@ -1,0 +1,11 @@
+{
+  "buildCommand": "pnpm run build:web",
+  "outputDirectory": "web-dist",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
